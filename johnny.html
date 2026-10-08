@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%2322262B%22/%3E%3Ctext x=%2216%22 y=%2223%22 text-anchor=%22middle%22 font-family=%22Arial,sans-serif%22 font-weight=%22700%22 font-size=%2220%22 fill=%22%236FB8AE%22%3ES%3C/text%3E%3C/svg%3E">
+<meta name="description" content="Johnny, is it still you? A branching psychological horror story built in Ren'Py and RPG Maker.">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Johnny, is it still you? — Sven Slivar</title>
+<script>try{document.documentElement.setAttribute("data-theme",localStorage.getItem("sven.theme")||"day")}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;family=Libre+Caslon+Display&amp;family=Crimson+Pro:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+<script src="site.js"></script>
+<script src="johnny-reception.js"></script>
+<style>
+:root,[data-theme="day"]{--bg:#EDEEEA;--surface:#F7F7F4;--surface2:#E1E3DE;--ink:#22262B;--ink2:#40454C;--muted:#5F646B;--line:#D3D5CF;--line2:#B9BCB6;--inv:#22262B;--on-inv:#EDEEEA;--teal:#3E8C84;--teal-t:#2F6F68;--teal-s:#E3EDEB;--rose:#C0616A;--rose-t:#A34A53;--rose-s:#F3E4E5;--violet:#7A6BB8;--violet-t:#5E509C;--violet-s:#E8E5F3;--ph1:#CDD8D5;--ph2:#8DB9B3}
+[data-theme="night"]{--bg:#1E2433;--surface:#252C3D;--surface2:#2C3447;--ink:#E9E6DF;--ink2:#C4C8D2;--muted:#A3A9B8;--line:#353E52;--line2:#4A5369;--inv:#E9E6DF;--on-inv:#1E2433;--teal:#6FB8AE;--teal-t:#6FB8AE;--teal-s:#243A41;--rose:#E08A92;--rose-t:#E08A92;--rose-s:#3A2F3E;--violet:#A396DE;--violet-t:#A396DE;--violet-s:#302F4C;--ph1:#34435A;--ph2:#4A7C80}
+html{color-scheme:light}
+[data-theme="night"]{color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;transition:background-color .3s,color .3s}
+a{color:var(--ink);text-underline-offset:3px}
+a:hover{color:var(--teal-t)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+[data-game="johnny"]{--bg:#0C0A0B;--surface:#161012;--surface2:#1C1416;--ink:#EDE6D6;--ink2:#CFC4B4;--muted:#9A8E80;--line:#2A1C1F;--line2:#4A2A30;--inv:#EDE6D6;--on-inv:#0C0A0B;--teal:#D7263D;--teal-t:#E8505F;--teal-s:#161012;color-scheme:dark}
+body{background:#0C0A0B}
+</style>
+</helmet>
+<div data-game="johnny" style="min-height:100vh;background:var(--bg);color:var(--ink)">
+<header style="position:sticky;top:0;z-index:50;background:color-mix(in oklab,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)">
+  <div style="max-width:1240px;margin:0 auto;padding:0 40px;height:64px;display:flex;align-items:center;gap:32px">
+    <a href="index.html" style="font:800 18px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;text-decoration:none">Sven Slivar</a>
+    <nav style="display:flex;gap:26px;margin-left:auto;font-size:15px;font-weight:500">
+      <a href="index.html#projects" style="text-decoration:none;font-weight:700">Projects</a>
+      <a href="index.html#experience" style="text-decoration:none">Experience</a>
+      <a href="index.html#skills" style="text-decoration:none">Skills</a>
+      <a href="index.html#contact" style="text-decoration:none">Contact</a>
+    </nav>
+    
+    <a href="Sven_Slivar_CV.pdf" download="" style="text-decoration:none;font-size:14px;font-weight:600;padding:10px 15px;background:var(--inv);color:var(--on-inv);border-radius:6px">Download CV</a>
+  </div>
+</header>
+
+<main style="max-width:1240px;margin:0 auto;padding:28px 40px 0">
+  <nav aria-label="Breadcrumb" style="display:flex;gap:8px;font-size:14px;color:var(--muted)">
+    <a href="index.html#projects" style="color:var(--muted)">Projects</a><span aria-hidden="true">/</span><span style="color:var(--ink);font-weight:600">Johnny, is it still you?</span>
+  </nav>
+  <div style="position:relative;margin-top:18px;aspect-ratio:16 / 7;border-radius:14px;overflow:hidden;background:#0C0A0B;box-shadow:inset 0 3px 0 #D7263D"><img src="media/johnny/vn-motel-exterior.webp" srcSet="media/johnny/vn-motel-exterior-thumb.webp 640w, media/johnny/vn-motel-exterior.webp 1600w" sizes="100vw" width="1600" height="900" alt="Ren'Py build: the neon motel at night, Johnny says &quot;Not this time, no&quot;" style="display:block;width:100%;height:100%;object-fit:cover;background:transparent"></div>
+
+  <section style="display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:64px;padding:48px 0 72px;border-bottom:1px solid var(--line)">
+    <div>
+      <div style="font:500 13px 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#E8505F">University project · psychological horror</div>
+      <h1 style="margin:14px 0 0;font:400 80px/0.98 'Libre Caslon Display',serif">Johnny, is it still you?</h1>
+      <p style="margin:22px 0 0;max-width:48ch;font:400 22px/1.5 'Crimson Pro',serif;color:var(--ink2);text-wrap:pretty">A branching horror story told in second person. You are the voice in Johnny's head as he drives to a rundown motel to kill his wife, and he can't tell you why.</p>
+    </div>
+    <dl style="margin:0;align-self:end;display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px 24px;font-size:16px;padding:22px;background:var(--surface);border-radius:14px">
+      <dt style="color:var(--muted)">Type</dt><dd style="margin:0;font-weight:600">University project</dd>
+      <dt style="color:var(--muted)">Script</dt><dd style="margin:0;font-weight:600">Branching, written in Twine</dd>
+      <dt style="color:var(--muted)">Builds</dt><dd style="margin:0;font-weight:600">Ren'Py visual novel, RPG Maker exploration game</dd>
+      <dt style="color:var(--muted)">Tags</dt><dd style="margin:0;display:flex;flex-wrap:wrap;gap:6px"><span style="padding:3px 10px;border:1px solid var(--line2);border-radius:999px;font-size:13px;font-weight:600">Twine</span><span style="padding:3px 10px;border:1px solid var(--line2);border-radius:999px;font-size:13px;font-weight:600">Ren'Py</span><span style="padding:3px 10px;border:1px solid var(--line2);border-radius:999px;font-size:13px;font-weight:600">RPG Maker</span><span style="padding:3px 10px;border:1px solid var(--line2);border-radius:999px;font-size:13px;font-weight:600">Narrative design</span></dd>
+    </dl>
+  </section>
+
+  <section style="display:grid;grid-template-columns:260px minmax(0,1fr);gap:64px;padding:72px 0;border-bottom:1px solid var(--line)">
+    <h2 style="margin:0;font:400 32px/1.1 'Libre Caslon Display',serif">The story</h2>
+    <div><div style="max-width:62ch;display:flex;flex-direction:column;gap:16px;font:400 20px/1.6 'Crimson Pro',serif;color:var(--ink2)">
+      <p style="margin:0">Johnny wakes in a dying car on an empty road, nose bleeding, the gas gauge in the red. In the glove compartment there is a cheap revolver with six rounds. Ahead is a motel at the edge of nowhere, and room 502.</p>
+      <p style="margin:0">You are the voice he talks to. Through the empty reception, a phone that rings when it shouldn't and a hallway of too many doors, your answers decide what he trusts, and whether the woman waiting behind the door is still the person he married.</p>
+      <p style="margin:0">Death is not an exit. The story loops, and each time Johnny walks back into the motel knowing a little more.</p>
+    </div></div>
+  </section>
+
+  <section style="padding:72px 0;border-bottom:1px solid var(--line)">
+    <h2 style="margin:0;font:400 32px/1.1 'Libre Caslon Display',serif">Two builds</h2>
+    <p style="margin:12px 0 0;max-width:60ch;font:400 19px/1.55 'Crimson Pro',serif;color:var(--ink2)">One script, made twice: once to be read, once to be walked through.</p>
+    <div style="display:flex;flex-direction:column;gap:72px;margin-top:44px">
+      <div style="display:flex;flex-wrap:wrap;gap:32px 56px;align-items:center">
+        <div onMouseEnter="{{ vnPause }}" onMouseLeave="{{ vnResume }}" onFocus="{{ vnPause }}" onBlur="{{ vnResume }}" style="flex:7 1 440px;min-width:0">
+          <div role="region" aria-roledescription="carousel" aria-label="Ren'Py screenshots" style="position:relative;aspect-ratio:16 / 9;border-radius:10px;overflow:hidden;background:#000">
+            <div aria-hidden="{{ vnHide0 }}" style="position:absolute;inset:0;opacity:{{ vnOp0 }};transition:opacity .7s ease"><img src="media/johnny/vn-motel-exterior.webp" width="1600" height="900" loading="lazy" alt="Ren'Py build: the neon motel at night, Johnny says &quot;Not this time, no&quot;" style="display:block;width:100%;height:100%;object-fit:cover"></div>
+            <div aria-hidden="{{ vnHide1 }}" style="position:absolute;inset:0;opacity:{{ vnOp1 }};transition:opacity .7s ease"><img src="media/johnny/vn-front-desk.webp" width="1600" height="900" loading="lazy" alt="Ren'Py build: a motel front desk under a flickering fluorescent light" style="display:block;width:100%;height:100%;object-fit:cover"></div>
+            <div aria-hidden="{{ vnHide2 }}" style="position:absolute;inset:0;opacity:{{ vnOp2 }};transition:opacity .7s ease"><img src="media/johnny/vn-motel-room.webp" width="1600" height="900" loading="lazy" alt="Ren'Py build: a red-lit motel room with a woman sitting on the bed" style="display:block;width:100%;height:100%;object-fit:cover"></div>
+            <div aria-hidden="true" style="position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(transparent,rgba(0,0,0,.7));pointer-events:none"></div>
+            <button onClick="{{ vnPrev }}" aria-label="Previous image" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(12,10,11,.7);color:#F2ECE4;font-size:18px;cursor:pointer" style-hover="border-color:#D7263D">←</button>
+            <button onClick="{{ vnNext }}" aria-label="Next image" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(12,10,11,.7);color:#F2ECE4;font-size:18px;cursor:pointer" style-hover="border-color:#D7263D">→</button>
+            <div style="position:absolute;left:16px;right:16px;bottom:14px;display:flex;align-items:center;gap:12px">
+              <span aria-live="polite" style="font:500 12px 'JetBrains Mono',monospace;color:#F2ECE4">{{ vnNum }} / 03 · {{ vnLabel }}</span>
+              <span style="margin-left:auto;display:flex;gap:6px">
+                <sc-for list="{{ vnDots }}" as="d" hint-placeholder-count="3"><button onClick="{{ d.go }}" aria-label="{{ d.label }}" style="width:{{ d.w }};height:3px;padding:0;border:0;border-radius:2px;background:{{ d.bg }};cursor:pointer;transition:width .25s"></button></sc-for>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div style="flex:5 1 320px;min-width:0;display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;gap:12px;align-items:baseline;font:500 11px 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)"><span>Build 1</span><span aria-hidden="true">·</span><span style="color:#D7263D">Ren'Py</span></div>
+          <h3 style="margin:0;font:400 30px/1.15 'Libre Caslon Display',serif">The visual novel</h3>
+          <p style="margin:0;font:400 19px/1.55 'Crimson Pro',serif;color:var(--ink2);text-wrap:pretty">The script as a visual novel: narration, dialogue and branching choices. I was in charge of all of the code.</p>
+          <div style="margin-top:10px;font:500 11px 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">What I built</div>
+          <ul style="margin:0;padding:0;list-style:none;font:400 18px/1.5 'Crimson Pro',serif;color:var(--ink);border-bottom:1px solid var(--line)"><li style="display:grid;grid-template-columns:18px minmax(0,1fr);gap:8px;padding:10px 0;border-top:1px solid var(--line)"><span aria-hidden="true" style="color:#D7263D">—</span><span>All of the Ren'Py code, start to finish</span></li><li style="display:grid;grid-template-columns:18px minmax(0,1fr);gap:8px;padding:10px 0;border-top:1px solid var(--line)"><span aria-hidden="true" style="color:#D7263D">—</span><span>Connecting the scenes so the branching script plays through in the right order</span></li><li style="display:grid;grid-template-columns:18px minmax(0,1fr);gap:8px;padding:10px 0;border-top:1px solid var(--line)"><span aria-hidden="true" style="color:#D7263D">—</span><span>The dialogue: who speaks, what is narrated and how each line is shown</span></li><li style="display:grid;grid-template-columns:18px minmax(0,1fr);gap:8px;padding:10px 0;border-top:1px solid var(--line)"><span aria-hidden="true" style="color:#D7263D">—</span><span>Choice options and the branches they lead to</span></li></ul>
+        </div>
+      </div>
+      
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <div style="display:flex;flex-wrap:wrap;gap:12px 48px;align-items:flex-end;justify-content:space-between">
+          <div style="max-width:620px;display:flex;flex-direction:column;gap:10px">
+            <div style="font:500 11px 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#D7263D">Interactive · the Twine map</div>
+            <h3 style="margin:0;font:400 30px/1.15 'Libre Caslon Display',serif">Read the branches</h3>
+            <p style="margin:0;font:400 19px/1.55 'Crimson Pro',serif;color:var(--ink2);text-wrap:pretty">Johnny's arrival at the motel, straight from the Twine file I scripted the Ren'Py build from. Every box is a passage, placed where it sits in Twine. Click one to read it, or follow the choices and watch your path light up.</p>
+          </div>
+          <div style="display:flex;gap:8px">
+            <button onClick="{{ walk }}" style="font:600 13px 'JetBrains Mono',monospace;padding:10px 14px;border:1px solid #D7263D;border-radius:6px;background:{{ walkBg }};color:{{ walkFg }};cursor:pointer">{{ walkLabel }}</button>
+            <button onClick="{{ mapReset }}" style="font:600 13px 'JetBrains Mono',monospace;padding:10px 14px;border:1px solid var(--line2);border-radius:6px;background:transparent;color:var(--ink2);cursor:pointer" style-hover="border-color:var(--ink)">Reset</button>
+          </div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:stretch">
+          <div style="flex:6 1 420px;min-width:0;border-radius:12px;background:radial-gradient(ellipse at 40% 30%,#1C1214,#0C0A0B 75%);box-shadow:0 0 0 1px #2A2023;padding:12px">
+            <svg viewBox="405 1180 1090 915" role="group" aria-label="Twine passage map" style="display:block;width:100%;height:auto;font-family:'JetBrains Mono',monospace">
+              <defs>
+                <marker id="jArrDim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#4A3E42"></path></marker>
+                <marker id="jArrHot" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#D7263D"></path></marker>
+                <marker id="jArrNext" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#F2ECE4"></path></marker>
+              </defs>
+              <sc-for list="{{ edges }}" as="e" hint-placeholder-count="0">
+                <path d="{{ e.d }}" fill="none" stroke="{{ e.stroke }}" stroke-width="{{ e.w }}" stroke-dasharray="{{ e.dash }}" pathLength="1" stroke-dashoffset="{{ e.off }}" marker-end="{{ e.marker }}" style="transition:stroke-dashoffset .8s ease {{ e.delay }},stroke .3s"></path>
+              </sc-for>
+              <sc-for list="{{ nodes }}" as="n" hint-placeholder-count="0">
+                <g onClick="{{ n.go }}" style="cursor:pointer;opacity:{{ n.op }};transition:opacity .5s ease {{ n.delay }}">
+                  <rect x="{{ n.rx }}" y="{{ n.ry }}" width="76" height="76" rx="8" fill="{{ n.fill }}" stroke="{{ n.stroke }}" stroke-width="{{ n.sw }}" stroke-dasharray="{{ n.sdash }}" style="filter:{{ n.glow }};transition:fill .3s,stroke .3s"></rect>
+                  <text x="{{ n.tx }}" y="{{ n.ty }}" text-anchor="middle" font-size="19" font-weight="600" fill="{{ n.ink }}">{{ n.label }}</text>
+                  <title>{{ n.title }}</title>
+                </g>
+              </sc-for>
+            </svg>
+            <div style="padding:4px 6px 2px;display:flex;flex-wrap:wrap;gap:6px 18px;font:500 11px 'JetBrains Mono',monospace;color:#8E8589">
+              <span style="display:flex;gap:6px;align-items:center"><span style="width:10px;height:10px;border-radius:2px;background:#D7263D"></span>reading</span>
+              <span style="display:flex;gap:6px;align-items:center"><span style="width:10px;height:10px;border-radius:2px;border:1px solid #F2ECE4"></span>a choice away</span>
+              <span style="display:flex;gap:6px;align-items:center"><span style="width:10px;height:10px;border-radius:2px;background:#2A1418;border:1px solid #D7263D"></span>visited</span>
+              <span style="margin-left:auto">{{ countLabel }}</span>
+            </div>
+          </div>
+          <div style="flex:4 1 320px;min-width:0;display:flex;flex-direction:column;border-radius:12px;overflow:hidden;background:#0C0A0B;box-shadow:0 0 0 1px #2A2023">
+            <div style="position:relative;aspect-ratio:16 / 7;overflow:hidden">
+              <img src="media/johnny/vn-motel-exterior-thumb.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%;transform:scale(1.35);transform-origin:50% 0;opacity:{{ bgExt }};transition:opacity .6s">
+              <img src="media/johnny/vn-front-desk-thumb.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 20%;transform:scale(1.35);transform-origin:50% 0;opacity:{{ bgDesk }};transition:opacity .6s">
+              <div style="position:absolute;inset:0;background:linear-gradient(transparent 40%,#0C0A0B)"></div>
+              <div style="position:absolute;left:18px;bottom:12px;display:flex;gap:10px;align-items:baseline"><span style="font:600 13px 'JetBrains Mono',monospace;padding:3px 8px;border-radius:4px;background:#D7263D;color:#fff">{{ curId }}</span><span style="font:500 12px 'JetBrains Mono',monospace;color:#B8AEB1">{{ curScene }}</span></div>
+            </div>
+            <div aria-live="polite" style="flex:1 1 auto;max-height:360px;overflow-y:auto;padding:16px 20px 8px;display:flex;flex-direction:column;gap:10px;font:400 18px/1.55 'Crimson Pro',serif;color:#E9E3DC">
+              <sc-for list="{{ paras }}" as="p" hint-placeholder-count="3">
+                <p style="margin:0;text-wrap:pretty"><sc-for list="{{ p.segs }}" as="s" hint-placeholder-count="1"><span style="font-style:{{ s.fs }};color:{{ s.c }}">{{ s.t }}</span></sc-for></p>
+              </sc-for>
+            </div>
+            <div style="padding:12px 20px 18px;display:flex;flex-direction:column;gap:8px;border-top:1px solid #2A2023">
+              <sc-for list="{{ links }}" as="l" hint-placeholder-count="2">
+                <button onClick="{{ l.go }}" disabled="{{ l.off }}" style="display:flex;gap:12px;align-items:baseline;width:100%;text-align:left;padding:10px 14px;border:1px solid #3A3034;border-radius:6px;background:#141012;color:{{ l.c }};font:italic 400 18px/1.35 'Crimson Pro',serif;cursor:{{ l.cur }}" style-hover="border-color:#D7263D">
+                  <span style="flex:0 0 auto;font:600 11px 'JetBrains Mono',monospace;font-style:normal;color:#8E8589">→ {{ l.to }}</span><span>{{ l.label }}</span>
+                </button>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+        <div style="font:500 11px 'JetBrains Mono',monospace;color:var(--muted)">Passage text and positions from the Twine file · 24 passages from chapter 1</div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap-reverse;gap:32px 56px;align-items:center">
+        <div style="flex:5 1 320px;min-width:0;display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;gap:12px;align-items:baseline;font:500 11px 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)"><span>Build 2</span><span aria-hidden="true">·</span><span style="color:#D7263D">RPG Maker</span></div>
+          <h3 style="margin:0;font:400 30px/1.15 'Libre Caslon Display',serif">The explorable RPG</h3>
+          <p style="margin:0;font:400 19px/1.55 'Crimson Pro',serif;color:var(--ink2);text-wrap:pretty">The same story as a world you walk through: the motel, the hallway and room 502, mostly in the dark.</p>
+          <div style="margin-top:10px;font:500 11px 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">What I built</div>
+          <ul style="margin:0;padding:0;list-style:none;font:400 18px/1.5 'Crimson Pro',serif;color:var(--ink);border-bottom:1px solid var(--line)"><li style="display:grid;grid-template-columns:18px minmax(0,1fr);gap:8px;padding:10px 0;border-top:1px solid var(--line)"><span aria-hidden="true" style="color:#D7263D">—</span><span>The whole world and how it is structured, from the motel to room 502</span></li><li style="display:grid;grid-template-columns:18px minmax(0,1fr);gap:8px;padding:10px 0;border-top:1px solid var(--line)"><span aria-hidden="true" style="color:#D7263D">—</span><span>The flashlight, the only light Johnny has in the dark</span></li><li style="display:grid;grid-template-columns:18px minmax(0,1fr);gap:8px;padding:10px 0;border-top:1px solid var(--line)"><span aria-hidden="true" style="color:#D7263D">—</span><span>Interaction with objects as you explore</span></li><li style="display:grid;grid-template-columns:18px minmax(0,1fr);gap:8px;padding:10px 0;border-top:1px solid var(--line)"><span aria-hidden="true" style="color:#D7263D">—</span><span>A sprint bar and a custom sprint, written as my own RPG Maker plugin</span></li><li style="display:grid;grid-template-columns:18px minmax(0,1fr);gap:8px;padding:10px 0;border-top:1px solid var(--line)"><span aria-hidden="true" style="color:#D7263D">—</span><span>Plugin setup and scripting to bend the engine to the game</span></li></ul>
+        </div>
+        <div style="flex:7 1 440px;min-width:0">
+          <div style="position:relative;aspect-ratio:1280 / 642;border-radius:10px;overflow:hidden;background:#000;box-shadow:0 0 0 1px rgba(215,38,61,.35)"><video data-autoloop="" src="media/johnny/rpg-gameplay-loop.mp4" poster="media/johnny/rpg-gameplay-poster.webp" width="1280" height="642" preload="metadata" aria-label="RPG Maker build gameplay: Johnny walks the motel hallway, lit only by his flashlight" style="display:block;width:100%;height:100%;object-fit:cover;background:#000"></video></div>
+          <div style="margin-top:10px;font:500 11px 'JetBrains Mono',monospace;color:var(--muted)">Gameplay · RPG Maker build</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <div style="display:flex;flex-wrap:wrap;gap:12px 48px;align-items:flex-end;justify-content:space-between">
+          <div style="max-width:640px;display:flex;flex-direction:column;gap:10px">
+            <div style="font:500 11px 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#D7263D">Minigame · events, interaction, flashlight</div>
+            <h3 style="margin:0;font:400 30px/1.15 'Libre Caslon Display',serif">The reception, after dark</h3>
+            <p style="margin:0;font:400 19px/1.55 'Crimson Pro',serif;color:var(--ink2);text-wrap:pretty">Walk Johnny around the motel reception by flashlight. Face an object and press Space to inspect it. The script plays out in message boxes, and the event page on the right shows each RPG Maker command as it runs. Find the key to room 502, then try the hallway door.</p>
+          </div>
+          <div style="display:flex;gap:18px;font:500 12px 'JetBrains Mono',monospace;color:var(--muted)"><span>Arrows / WASD · move</span><span>Space · inspect / next</span></div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:stretch">
+          <div style="flex:7 1 440px;min-width:0;display:flex;flex-direction:column;gap:10px">
+            <div style="position:relative;border-radius:10px;overflow:hidden;background:#050306;container-type:inline-size;box-shadow:0 0 0 1px rgba(215,38,61,.35)">
+              <canvas ref="{{ rcRef }}" tabIndex="0" onClick="{{ rcFocus }}" aria-label="The motel reception, a top-down RPG Maker style room" style="display:block;width:100%;aspect-ratio:3 / 2;image-rendering:pixelated;outline:none"></canvas>
+              <div style="position:absolute;left:2cqw;top:1.6cqw;display:flex;gap:1.4cqw;pointer-events:none">
+                <span style="padding:.5cqw 1.2cqw;border:2px solid rgba(255,255,255,.75);border-radius:5px;background:linear-gradient(rgba(36,52,110,.85),rgba(16,24,58,.9));color:#fff;font:500 1.9cqw 'JetBrains Mono',monospace;text-shadow:1px 1px 0 #000">Motel · Reception</span>
+                <sc-if value="{{ rc.hasKey }}" hint-placeholder-val="{{ false }}"><span style="padding:.5cqw 1.2cqw;border:2px solid rgba(255,255,255,.75);border-radius:5px;background:linear-gradient(rgba(36,52,110,.85),rgba(16,24,58,.9));color:#E7B94A;font:500 1.9cqw 'JetBrains Mono',monospace;text-shadow:1px 1px 0 #000">Key 502 ×1</span></sc-if>
+              </div>
+              <sc-if value="{{ rc.choicesOn }}" hint-placeholder-val="{{ false }}">
+                <div role="listbox" aria-label="Choices" style="position:absolute;right:2cqw;bottom:31cqw;min-width:24cqw;padding:1cqw;border:2px solid rgba(255,255,255,.8);border-radius:6px;background:linear-gradient(rgba(36,52,110,.9),rgba(16,24,58,.94));display:flex;flex-direction:column;gap:.4cqw">
+                  <sc-for list="{{ rc.choices }}" as="c" hint-placeholder-count="2">
+                    <button onClick="{{ c.pick }}" style="text-align:left;padding:.7cqw 1.4cqw;border:1px solid {{ c.bd }};border-radius:3px;background:{{ c.bg }};color:#fff;font:500 2.3cqw 'JetBrains Mono',monospace;text-shadow:1px 1px 0 #000;cursor:pointer">{{ c.text }}</button>
+                  </sc-for>
+                </div>
+              </sc-if>
+              <sc-if value="{{ rc.msgOn }}" hint-placeholder-val="{{ false }}">
+                <button onClick="{{ rcOk }}" style="position:absolute;left:1.5cqw;right:1.5cqw;bottom:1.5cqw;height:28cqw;box-sizing:border-box;padding:2cqw 3cqw;border:2px solid rgba(255,255,255,.85);border-radius:6px;background:linear-gradient(rgba(36,52,110,.88),rgba(16,24,58,.94));box-shadow:inset 0 0 0 2px rgba(0,0,0,.35);color:#fff;text-align:left;font:500 2.5cqw/1.55 'JetBrains Mono',monospace;text-shadow:1px 1px 0 #000;white-space:pre-line;overflow:hidden;cursor:pointer">{{ rc.shown }}<span aria-hidden="true" style="position:absolute;left:50%;bottom:.8cqw;transform:translateX(-50%);font-size:2cqw;opacity:{{ rc.moreOp }}">▼</span></button>
+              </sc-if>
+              <sc-if value="{{ rc.overlay }}" hint-placeholder-val="{{ true }}">
+                <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6cqw;background:rgba(5,3,6,.82);text-align:center;padding:4cqw">
+                  <div style="font:500 1.8cqw 'JetBrains Mono',monospace;letter-spacing:.2em;color:#D7263D">{{ rc.kicker }}</div>
+                  <div style="font:400 5.4cqw/1.05 'Libre Caslon Display',serif;color:#F2ECE4">{{ rc.title }}</div>
+                  <div style="max-width:70cqw;font:400 2.6cqw/1.45 'Crimson Pro',serif;color:#C9BFC2">{{ rc.sub }}</div>
+                  <button onClick="{{ rcStart }}" style="margin-top:1cqw;padding:1.4cqw 3cqw;border:0;border-radius:6px;background:#D7263D;color:#fff;font:600 2.3cqw 'Hanken Grotesk',sans-serif;cursor:pointer" style-hover="background:#B81E33">{{ rc.btn }}</button>
+                </div>
+              </sc-if>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+              <button onPointerDown="{{ pad.leftOn }}" onPointerUp="{{ pad.leftOff }}" onPointerLeave="{{ pad.leftOff }}" onPointerCancel="{{ pad.leftOff }}" aria-label="left" style="width:48px;height:48px;border:1px solid #3A3034;border-radius:6px;background:#141012;color:#F2ECE4;font:600 13px 'JetBrains Mono',monospace;touch-action:none;user-select:none;cursor:pointer">◀</button><button onPointerDown="{{ pad.upOn }}" onPointerUp="{{ pad.upOff }}" onPointerLeave="{{ pad.upOff }}" onPointerCancel="{{ pad.upOff }}" aria-label="up" style="width:48px;height:48px;border:1px solid #3A3034;border-radius:6px;background:#141012;color:#F2ECE4;font:600 13px 'JetBrains Mono',monospace;touch-action:none;user-select:none;cursor:pointer">▲</button><button onPointerDown="{{ pad.downOn }}" onPointerUp="{{ pad.downOff }}" onPointerLeave="{{ pad.downOff }}" onPointerCancel="{{ pad.downOff }}" aria-label="down" style="width:48px;height:48px;border:1px solid #3A3034;border-radius:6px;background:#141012;color:#F2ECE4;font:600 13px 'JetBrains Mono',monospace;touch-action:none;user-select:none;cursor:pointer">▼</button><button onPointerDown="{{ pad.rightOn }}" onPointerUp="{{ pad.rightOff }}" onPointerLeave="{{ pad.rightOff }}" onPointerCancel="{{ pad.rightOff }}" aria-label="right" style="width:48px;height:48px;border:1px solid #3A3034;border-radius:6px;background:#141012;color:#F2ECE4;font:600 13px 'JetBrains Mono',monospace;touch-action:none;user-select:none;cursor:pointer">▶</button><button onPointerDown="{{ pad.okOn }}" onPointerUp="{{ pad.okOff }}" onPointerLeave="{{ pad.okOff }}" onPointerCancel="{{ pad.okOff }}" aria-label="ok" style="width:84px;height:48px;border:1px solid #3A3034;border-radius:6px;background:#141012;color:#F2ECE4;font:600 13px 'JetBrains Mono',monospace;touch-action:none;user-select:none;cursor:pointer">SPACE</button>
+              <span style="margin-left:6px;font:500 11px 'JetBrains Mono',monospace;color:var(--muted)">Touch controls</span>
+            </div>
+          </div>
+          <div style="flex:5 1 320px;min-width:0;display:flex;flex-direction:column;border-radius:8px;overflow:hidden;background:#ECECEC;color:#1A1A1A;box-shadow:0 0 0 1px #9A9A9A;font:500 12px/1.5 'JetBrains Mono',monospace">
+            <div style="display:flex;justify-content:space-between;gap:8px;padding:8px 12px;background:linear-gradient(#FAFAFA,#DCDCDC);border-bottom:1px solid #9A9A9A;font-weight:600"><span>{{ rc.evTitle }}</span><span style="color:#666">{{ rc.evMeta }}</span></div>
+            <div style="display:flex;gap:2px;padding:6px 10px 0;background:#E2E2E2;border-bottom:1px solid #B0B0B0"><span style="padding:3px 12px;background:#ECECEC;border:1px solid #B0B0B0;border-bottom:0;border-radius:3px 3px 0 0">1</span></div>
+            <div style="padding:8px 12px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:2px 12px;border-bottom:1px solid #C4C4C4;color:#444">
+              <span>Trigger</span><span>{{ rc.trigger }}</span>
+              <span>Condition</span><span>{{ rc.cond }}</span>
+            </div>
+            <div style="padding:6px 12px 2px;color:#666">Contents</div>
+            <div aria-live="polite" style="flex:1 1 auto;margin:0 10px 10px;min-height:260px;max-height:380px;overflow:auto;background:#FFFFFF;border:1px solid #9A9A9A;padding:4px 0">
+              <sc-for list="{{ rc.rows }}" as="r" hint-placeholder-count="8">
+                <div style="padding:1px 10px 1px {{ r.pad }};white-space:pre;overflow:hidden;text-overflow:ellipsis;background:{{ r.bg }};color:{{ r.c }};transition:background .15s">{{ r.txt }}</div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+        <div style="font:500 11px 'JetBrains Mono',monospace;color:var(--muted)">Text from the Twine script (passages 12–13) · room and event page redrawn in RPG Maker style</div>
+      </div>
+    </div>
+  </section>
+  <section style="display:grid;grid-template-columns:260px minmax(0,1fr);gap:64px;padding:72px 0;border-bottom:1px solid var(--line)">
+    <h2 style="margin:0;font:400 32px/1.1 'Libre Caslon Display',serif">From the script</h2>
+    <div><blockquote style="margin:0;padding:0 0 0 24px;border-left:2px solid #D7263D;max-width:56ch;font:italic 400 26px/1.45 'Crimson Pro',serif;color:var(--ink)">People shot by this pistol died of old age. Johnny knows it, looking at all six of the bullets. All six looking back at Johnny.</blockquote></div>
+  </section>
+
+  <nav aria-label="More projects" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:72px 0 88px">
+    <a href="sundress-murder.html" style="display:block;text-decoration:none;padding:22px;background:var(--surface);border-radius:14px;border-top:4px solid #E0463C">
+      <div style="font-size:14px;color:var(--muted)">← Previous</div>
+      <div style="margin-top:6px;font:400 26px 'Libre Caslon Display',serif">Sundress Murder</div>
+    </a>
+    <a href="parry-simulator.html" style="display:block;text-align:right;text-decoration:none;padding:22px;background:var(--surface);border-radius:14px;border-top:4px solid #6FE3D3">
+      <div style="font-size:14px;color:var(--muted)">Next →</div>
+      <div style="margin-top:6px;font:400 26px 'Libre Caslon Display',serif">Parry Simulator</div>
+    </a>
+  </nav>
+</main>
+<footer style="border-top:1px solid var(--line)">
+  <div style="max-width:1240px;margin:0 auto;padding:32px 40px;display:flex;align-items:center;gap:16px;font-size:15px;color:var(--ink2)">
+    <span style="margin-right:auto">svenslivar@gmail.com · Zagreb, Croatia</span>
+    <a href="mailto:svenslivar@gmail.com" style="text-decoration:none;font-weight:600;padding:11px 18px;background:var(--inv);color:var(--on-inv);border-radius:6px">Email me</a>
+  </div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>const SL={vn:["The motel","The front desk","Room 502"]};const SCENE=id=>/^1[23]/.test(id)?"The reception":"The parking lot";class Component extends DCLogic{state={theme:"day",vn:0,pause:{},data:null,cur:"9",hist:[],intro:false,auto:false,rc:{phase:"ready",ev:null,row:-1,msg:null,chars:0,choices:null,sel:0,sw:{},self:{}}};rcRef=React.createRef();componentDidMount(){this.setState({theme:document.documentElement.getAttribute("data-theme")||"day"});const go=()=>window.SV&&window.SV.media?window.SV.media.init():this.mw=setTimeout(go,40);go();this.reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;if(!this.reduced)this.cyc=setInterval(()=>this.setState(s=>s.pause.vn?null:{vn:(s.vn+1)%3}),6e3);fetch("johnny-branch-data.json").then(r=>r.json()).then(data=>{this.setState({data:data});this.io=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){this.io.disconnect();setTimeout(()=>this.setState({intro:true}),60)}},{threshold:.2});const svg=document.querySelector('svg[aria-label="Twine passage map"]');if(svg)this.io.observe(svg);else this.setState({intro:true})});const mountRc=()=>{if(window.JohnnyReception&&this.rcRef.current)this.game=window.JohnnyReception.mount(this.rcRef.current,{event:id=>this.runEvent(id),key:k=>this.rcKey(k)});else this.ms=setTimeout(mountRc,50)};mountRc()}componentWillUnmount(){this.dead=true;clearInterval(this.tyI);clearTimeout(this.mw);clearTimeout(this.ms);clearInterval(this.cyc);clearInterval(this.aw);this.io&&this.io.disconnect();this.game&&this.game.destroy()}visit(id,stopAuto=true){if(stopAuto){clearInterval(this.aw);this.setState({auto:false})}this.setState(s=>s.cur===id?null:{cur:id,hist:[...s.hist,s.cur]})}walk(){if(this.state.auto){clearInterval(this.aw);this.setState({auto:false});return}this.setState({auto:true,cur:"9",hist:[]});this.aw=setInterval(()=>{const d=this.state.data;if(!d)return;const n=d.find(x=>x.id===this.state.cur);const fwd=n.links.filter(l=>d.some(x=>x.id===l.to)&&!this.state.hist.includes(l.to)&&l.to!==this.state.cur);if(!fwd.length){clearInterval(this.aw);this.setState({auto:false});return}this.visit(fwd[Math.floor(Math.random()*fwd.length)].to,false)},1700)}map(){const s=this.state,d=s.data||[],byId=Object.fromEntries(d.map(n=>[n.id,n]));const cur=byId[s.cur],next=new Set(cur?cur.links.map(l=>l.to):[]),seen=new Set(s.hist);const pairs=new Set;[...s.hist,s.cur].forEach((id,i,a)=>{if(i)pairs.add(a[i-1]+">"+id)});const depth={};const q=["9"];depth["9"]=0;while(q.length){const id=q.shift();(byId[id]?byId[id].links:[]).forEach(l=>{if(byId[l.to]&&depth[l.to]==null){depth[l.to]=depth[id]+1;q.push(l.to)}})}const nodes=d.map(n=>{const isCur=n.id===s.cur,isNext=next.has(n.id)&&!isCur,isSeen=seen.has(n.id)&&!isCur;return{label:n.id,title:"Passage "+n.id,rx:n.x+12,ry:n.y+12,tx:n.x+50,ty:n.y+57,fill:isCur?"#D7263D":isSeen?"#2A1418":"#151214",stroke:isCur?"#FF6B7A":isNext?"#F2ECE4":isSeen?"#D7263D":"#3A3236",sw:isCur||isNext?2.5:1.5,sdash:"none",ink:isCur?"#FFFFFF":isNext||isSeen?"#F2ECE4":"#8E8589",glow:isCur?"drop-shadow(0 0 14px rgba(215,38,61,.85))":"none",op:s.intro||this.reduced?1:0,delay:(depth[n.id]||0)*90+"ms",go:()=>this.visit(n.id)}});nodes.push({label:"14 …",title:"The story continues in passage 14",rx:712,ry:1832,tx:750,ty:1877,fill:"transparent",stroke:"#4A3E42",sw:1.5,sdash:"6 6",ink:"#8E8589",glow:"none",op:s.intro||this.reduced?1:0,delay:"900ms",go:()=>{}});const ctr=id=>id==="14"?[750,1870]:[byId[id].x+50,byId[id].y+50];const edges=[];d.forEach(n=>n.links.forEach(l=>{if(!byId[l.to]&&l.to!=="14")return;if(l.to===n.id)return;if(edges.some(e=>e.k===n.id+">"+l.to))return;const[x1,y1]=ctr(n.id),[x2,y2]=ctr(l.to),dx=x2-x1,dy=y2-y1,len=Math.hypot(dx,dy)||1,ux=dx/len,uy=dy/len;const back=l.to==="12"&&n.id!=="11"&&!/^11/.test(n.id);const a=[x1+ux*42,y1+uy*42],b=[x2-ux*46,y2-uy*46];const dd=back?`M${a[0]} ${a[1]} Q${(a[0]+b[0])/2-uy*60} ${(a[1]+b[1])/2+ux*60} ${b[0]} ${b[1]}`:`M${a[0]} ${a[1]} L${b[0]} ${b[1]}`;const hot=pairs.has(n.id+">"+l.to),nxt=n.id===s.cur;edges.push({k:n.id+">"+l.to,d:dd,stroke:hot?"#D7263D":nxt?"#F2ECE4":"#4A3E42",w:hot||nxt?3:2,dash:back?"0.02 0.02":"1",off:s.intro||this.reduced||back?0:1,marker:hot?"url(#jArrHot)":nxt?"url(#jArrNext)":"url(#jArrDim)",delay:(depth[n.id]||0)*90+150+"ms"})}));const paras=cur?(cur.paras.length?cur.paras:[[["(An empty passage: it only holds the link below.)",0]]]).map(p=>({segs:p.map(([t,em])=>({t:t,fs:em?"italic":"normal",c:em?"#FFFFFF":"#E9E3DC"}))})):[];const links=cur?cur.links.map(l=>{const ok=!!byId[l.to];return{label:l.label,to:l.to,off:!ok,c:ok?"#F2ECE4":"#8E8589",cur:ok?"pointer":"default",go:()=>ok&&this.visit(l.to)}}):[];return{nodes:nodes,edges:edges,paras:paras,links:links,curId:s.cur,curScene:SCENE(s.cur),bgExt:/^1[23]/.test(s.cur)?0:1,bgDesk:/^1[23]/.test(s.cur)?1:0,countLabel:new Set([...s.hist,s.cur]).size+" / "+d.length+" passages read",walkLabel:s.auto?"■ Stop":"▶ Walk a random path",walkBg:s.auto?"#D7263D":"transparent",walkFg:s.auto?"#fff":"#D7263D"}}rcSet(p){this.setState(s=>({rc:{...s.rc,...typeof p==="function"?p(s.rc):p}}))}pages(id){const n=(this.state.data||[]).find(x=>x.id===id);if(!n)return["..."];const out=[];let cur="";n.paras.map(p=>p.map(s=>s[0]).join("").replace(/^'"/,'"')).forEach(t=>{const parts=t.length>170?t.match(/[^.!?]+[.!?"]+\s*|[^.!?]+$/g).map(x=>x.trim()):[t];parts.forEach(pt=>{if(cur&&(cur+"\n"+pt).length>170){out.push(cur);cur=pt}else cur=cur?cur+"\n"+pt:pt})});if(cur)out.push(cur);return out}sleep(ms){return new Promise(r=>setTimeout(r,ms))}rcKey(k){const rc=this.state.rc;if(rc.choices){if(k==="up"||k==="down")this.rcSet(r=>({sel:(r.sel+(k==="up"?-1:1)+r.choices.length)%r.choices.length}));else if(k==="ok"&&this.choiceRes){const f=this.choiceRes;this.choiceRes=null;f(rc.sel)}return}if(k!=="ok"||rc.msg==null)return;if(rc.chars<rc.msg.length){clearInterval(this.tyI);this.rcSet({chars:99999});return}if(this.pageRes){const f=this.pageRes;this.pageRes=null;f()}}showPage(t){return new Promise(res=>{this.pageRes=res;clearInterval(this.tyI);this.rcSet({msg:t,chars:this.reduced?99999:0});if(!this.reduced)this.tyI=setInterval(()=>{const r=this.state.rc;if(r.msg==null||r.chars>=r.msg.length){clearInterval(this.tyI);return}this.rcSet({chars:r.chars+2})},22)})}choose(opts){return new Promise(res=>{this.choiceRes=res;this.rcSet({choices:opts,sel:0})})}async exec(list){for(const c of list){if(this.dead)return"stop";this.rcSet({row:c.row});if(c.c==="text"){for(const pg of c.pid?this.pages(c.pid):c.pages)await this.showPage(pg);this.rcSet({msg:null})}else if(c.c==="choice"){const i=await this.choose(c.opts);this.rcSet({choices:null,row:c.whenRows[i]});await this.sleep(250);if(await this.exec(c.br[i])==="stop")return"stop"}else if(c.c==="if"){await this.sleep(380);const ok=!!this.state.rc.sw[c.sw];this.rcSet({row:ok?c.row:c.elseRow});await this.sleep(ok?1:300);if(await this.exec(ok?c.then:c.else)==="stop")return"stop"}else if(c.c==="switch"){this.rcSet(r=>({sw:{...r.sw,[c.sw]:true}}));await this.sleep(420)}else if(c.c==="item"){this.game&&this.game.takeKey();await this.sleep(420)}else if(c.c==="transfer"){await this.sleep(500);this.rcSet({phase:"done"});return"stop"}else await this.sleep(420)}}async runEvent(id){if(this.state.rc.ev)return;const ev=this.events()[id];this.game.lock(true);this.rcSet({ev:id,row:-1});await this.sleep(150);const r=await this.exec(ev.list);this.rcSet(rc=>({msg:null,choices:null,row:-1,ev:r==="stop"?rc.ev:null,self:{...rc.self,[id]:true}}));await this.sleep(700);if(this.state.rc.phase!=="done"){this.rcSet({ev:null});this.game&&this.game.lock(false)}}events(){if(this._ev&&this._evData===this.state.data)return this._ev;const E={monitor:{no:1,name:"Monitor",list:[{c:"se",txt:"Play SE : Computer (60, 100, 0)"},{c:"text",pid:"12/1"},{c:"text",pid:"12/2"},{c:"self",txt:"Control Self Switch : A = ON"}]},ashtray:{no:2,name:"Ashtray",list:[{c:"text",pid:"12/1'"},{c:"text",pid:"12/2'"},{c:"self",txt:"Control Self Switch : A = ON"}]},phone:{no:3,name:"Telephone",list:[{c:"se",txt:"Play SE : Phone_Beep (70, 100, 0)"},{c:"text",pid:"12/1'''"},{c:"choice",opts:["Hello?","Hang up"],br:[[{c:"text",pid:"12/2'''"},{c:"switch",sw:2,txt:"Control Switches : #0002 Heard the Voice = ON"}],[{c:"text",pages:["Johnny puts the receiver back on the hook.\nThe breathing stops."]}]]},{c:"self",txt:"Control Self Switch : A = ON"}]},paper:{no:4,name:"Newspaper",list:[{c:"text",pid:"12/1''"},{c:"self",txt:"Control Self Switch : A = ON"}]},record:{no:5,name:"Record Player",list:[{c:"se",txt:"Play ME : Long_Way (60, 100, 0)"},{c:"text",pid:"12/b"},{c:"self",txt:"Control Self Switch : A = ON"}]},keys:{no:6,name:"Key Rack",list:[{c:"if",sw:1,then:[{c:"text",pages:["The hook for 502 is empty now. The key is in his pocket."]}],else:[{c:"text",pid:"13"},{c:"se",txt:"Play SE : Key (80, 100, 0)"},{c:"item",txt:"Change Items : Room Key 502 + 1"},{c:"switch",sw:1,txt:"Control Switches : #0001 Has Key 502 = ON"},{c:"text",pages:["Johnny takes the key to room 502."]}]}]},door:{no:7,name:"Hallway Door",list:[{c:"if",sw:1,then:[{c:"se",txt:"Play SE : Open1 (80, 100, 0)"},{c:"text",pages:["The key turns. Behind the door, the hallway stretches out into the dark.\nRoom 502 is at the far end."]},{c:"transfer",txt:"Transfer Player : Hallway 2F (8,14) (Fade: Black)"}],else:[{c:"text",pages:["Locked.\nThe room keys must be somewhere behind the desk."]}]}]}};Object.values(E).forEach(ev=>{const rows=[];const add=(txt,ind,kind)=>{rows.push({txt:txt,ind:ind,kind:kind});return rows.length-1};const walk=(list,ind)=>{list.forEach(c=>{const prev=c.pid||c.pages&&c.pages[0]||"";if(c.c==="text"){c.row=add("◆Text : None, Window, Bottom",ind,"text");const first=c.pid?this.pages(c.pid)[0]:c.pages[0];add(":          : "+(first||"").split("\n")[0],ind,"textline")}else if(c.c==="choice"){c.row=add("◆Show Choices : "+c.opts.join(", ")+" (Window, Right, #1, #2)",ind,"flow");c.whenRows=[];c.opts.forEach((o,i)=>{c.whenRows.push(add(": When ["+o+"]",ind,"flow"));walk(c.br[i],ind+1)});add(": End",ind,"flow")}else if(c.c==="if"){c.row=add("◆If : "+(c.sw===1?"#0001 Has Key 502":"#0002 Heard the Voice")+" is ON",ind,"flow");walk(c.then,ind+1);c.elseRow=add(": Else",ind,"flow");walk(c.else,ind+1);add(": End",ind,"flow")}else c.row=add("◆"+c.txt,ind,c.c==="switch"||c.c==="self"||c.c==="item"?"switch":c.c==="transfer"?"move":"se")})};walk(ev.list,0);add("◆",0,"end");ev.rows=rows});this._ev=E;this._evData=this.state.data;return E}rcVals(){const s=this.state,rc=s.rc,E=this.events(),ev=rc.ev?E[rc.ev]:null;const KC={text:"#1A1A1A",textline:"#1A1A1A",flow:"#1F4FB8",switch:"#B8261F",se:"#7A2DA0",move:"#B8261F",end:"#1A1A1A"};let rows;if(ev)rows=ev.rows.map((r,i)=>({txt:r.txt,pad:10+r.ind*22+"px",bg:i===rc.row?"#3874D8":"transparent",c:i===rc.row?"#FFFFFF":KC[r.kind]}));else rows=[{txt:"Map005 : Motel Reception · Events",pad:"10px",bg:"#F2F2F2",c:"#666"},...Object.values(E).map(e=>({txt:"EV00"+e.no+" "+e.name.padEnd(14," ")+(rc.self[Object.keys(E).find(k=>E[k]===e)]?" Self A: ON":""),pad:"10px",bg:"transparent",c:"#1A1A1A"})),{txt:"",pad:"10px",bg:"transparent",c:"#1A1A1A"},{txt:"Switches",pad:"10px",bg:"#F2F2F2",c:"#666"},{txt:"#0001 Has Key 502      "+(rc.sw[1]?"ON":"OFF"),pad:"10px",bg:"transparent",c:rc.sw[1]?"#B8261F":"#1A1A1A"},{txt:"#0002 Heard the Voice  "+(rc.sw[2]?"ON":"OFF"),pad:"10px",bg:"transparent",c:rc.sw[2]?"#B8261F":"#1A1A1A"}];const ov={ready:["MAP005 · MOTEL RECEPTION","The reception, after dark","Look around by flashlight. Find the key to room 502.","▶ Play"],done:["TRANSFER PLAYER · HALLWAY 2F","Room 502 is waiting.","The rest of chapter 1 plays out upstairs in the full RPG Maker build.","↻ Play again"]}[rc.phase];const id=rc.ev&&Object.keys(E).find(k=>k===rc.ev);return{rcRef:this.rcRef,rcFocus:()=>this.game&&this.game.focus(),rcOk:()=>this.rcKey("ok"),rcStart:()=>{this.game.reset();this.game.lock(false);this.setState({rc:{phase:"play",ev:null,row:-1,msg:null,chars:0,choices:null,sel:0,sw:{},self:{}}});setTimeout(()=>this.game.focus(),30)},pad:Object.fromEntries(["left","up","down","right","ok"].flatMap(k=>[[k+"On",e=>{e.preventDefault();this.game&&this.game.press(k,true)}],[k+"Off",()=>this.game&&this.game.press(k,false)]])),rc:{hasKey:!!rc.sw[1]&&rc.phase==="play",msgOn:rc.msg!=null,shown:rc.msg?rc.msg.slice(0,rc.chars):"",moreOp:rc.msg&&rc.chars>=rc.msg.length?1:0,choicesOn:!!rc.choices,choices:(rc.choices||[]).map((t,i)=>({text:t,bg:i===rc.sel?"rgba(255,255,255,.18)":"transparent",bd:i===rc.sel?"rgba(255,255,255,.7)":"transparent",pick:()=>{if(this.choiceRes){const f=this.choiceRes;this.choiceRes=null;f(i)}}})),overlay:rc.phase!=="play",kicker:ov?ov[0]:"",title:ov?ov[1]:"",sub:ov?ov[2]:"",btn:ov?ov[3]:"",evTitle:ev?"EV00"+ev.no+" · "+ev.name:"Event list",evMeta:ev?"running":"Map005",trigger:ev?"Action Button":"—",cond:ev?rc.ev==="door"?"none (checks #0001 inside)":"none":"Face an object, press Space",rows:rows}}}renderVals(){const s=this.state,day=s.theme!=="night",k="vn",len=3;const car={};for(let i=0;i<len;i++){car[k+"Op"+i]=s.vn===i?1:0;car[k+"Hide"+i]=s.vn===i?"false":"true"}return{themeLabel:day?"Night":"Day",toggleTheme:()=>{const t=day?"night":"day";window.SV?window.SV.theme.set(t):document.documentElement.setAttribute("data-theme",t);this.setState({theme:t})},...car,vnNum:String(s.vn+1).padStart(2,"0"),vnLabel:SL.vn[s.vn],vnDots:SL.vn.map((l,i)=>({label:"Show "+l,go:()=>this.setState({vn:i}),w:i===s.vn?"26px":"14px",bg:i===s.vn?"#D7263D":"rgba(242,236,228,.45)"})),vnPrev:()=>this.setState(t=>({vn:(t.vn+len-1)%len})),vnNext:()=>this.setState(t=>({vn:(t.vn+1)%len})),vnPause:()=>this.setState(t=>({pause:{...t.pause,vn:true}})),vnResume:()=>this.setState(t=>({pause:{...t.pause,vn:false}})),...this.map(),walk:()=>this.walk(),mapReset:()=>{clearInterval(this.aw);this.setState({auto:false,cur:"9",hist:[]})},...this.rcVals()}}}</script>
+</body>
+</html>
