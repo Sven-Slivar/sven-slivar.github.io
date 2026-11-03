@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%2322262B%22/%3E%3Ctext x=%2216%22 y=%2223%22 text-anchor=%22middle%22 font-family=%22Arial,sans-serif%22 font-weight=%22700%22 font-size=%2220%22 fill=%22%236FB8AE%22%3ES%3C/text%3E%3C/svg%3E">
+<meta name="description" content="Gostly, work in progress: a playtest toolkit for indie game developers with ghost replays, in-game bug reports and patch notes from git. Unity, Godot and web SDKs, Spring Boot API, React dashboard.">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Gostly — Sven Slivar</title>
+<script>try{document.documentElement.setAttribute("data-theme",localStorage.getItem("sven.theme")||"day")}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;family=Unbounded:wght@600&amp;display=swap" rel="stylesheet">
+<script src="site.js"></script>
+<style>
+:root,[data-theme="day"]{--bg:#EDEEEA;--surface:#F7F7F4;--surface2:#E1E3DE;--ink:#22262B;--ink2:#40454C;--muted:#5F646B;--line:#D3D5CF;--line2:#B9BCB6;--inv:#22262B;--on-inv:#EDEEEA;--teal:#3E8C84;--teal-t:#2F6F68}
+[data-theme="night"]{--bg:#1E2433;--surface:#252C3D;--surface2:#2C3447;--ink:#E9E6DF;--ink2:#C4C8D2;--muted:#A3A9B8;--line:#353E52;--line2:#4A5369;--inv:#E9E6DF;--on-inv:#1E2433;--teal:#6FB8AE;--teal-t:#6FB8AE}
+html{color-scheme:light}
+[data-theme="night"]{color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;transition:background-color .3s,color .3s}
+a{color:var(--ink);text-underline-offset:3px}
+a:hover{color:var(--teal-t)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+[data-game="gostly"]{--bg:#0C0A12;--surface:#15121D;--surface2:#1E1A29;--ink:#F1EEF8;--ink2:#C9C3D9;--muted:#A59FBA;--line:#2E2840;--line2:#3A3150;--inv:#9DF5C9;--on-inv:#08241A;--teal:#9DF5C9;--teal-t:#9DF5C9;color-scheme:dark}
+body{background:#0C0A12}
+</style>
+</helmet>
+<div data-game="gostly" style="min-height:100vh;background:var(--bg);color:var(--ink)">
+<header style="position:sticky;top:0;z-index:50;background:color-mix(in oklab,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)">
+  <div style="max-width:1240px;margin:0 auto;padding:0 40px;height:64px;display:flex;align-items:center;gap:32px">
+    <a href="index.html" style="font:800 18px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;text-decoration:none">Sven Slivar</a>
+    <nav style="display:flex;gap:26px;margin-left:auto;font-size:15px;font-weight:500">
+      <a href="index.html#projects" style="text-decoration:none;font-weight:700">Projects</a>
+      <a href="index.html#experience" style="text-decoration:none">Experience</a>
+      <a href="index.html#skills" style="text-decoration:none">Skills</a>
+      <a href="index.html#contact" style="text-decoration:none">Contact</a>
+    </nav>
+    <a href="Sven_Slivar_CV.pdf" download="" style="text-decoration:none;font-size:14px;font-weight:600;padding:10px 15px;background:var(--inv);color:var(--on-inv);border-radius:6px">Download CV</a>
+  </div>
+</header>
+
+<main style="max-width:1240px;margin:0 auto;padding:28px 40px 0">
+  <nav aria-label="Breadcrumb" style="display:flex;gap:8px;font-size:14px;color:var(--muted)">
+    <a href="index.html#projects" style="color:var(--muted)">Projects</a><span aria-hidden="true">/</span><span style="color:var(--ink);font-weight:600">Gostly</span>
+  </nav>
+
+  <div style="position:relative;margin-top:18px;aspect-ratio:1280 / 800;border-radius:14px;overflow:hidden;background:#0C0A12;box-shadow:inset 0 3px 0 #9DF5C9"><video data-autoloop="" src="media/gostly/replay-dashboard.mp4" poster="media/gostly/replay-dashboard-poster.webp" width="1280" height="800" preload="metadata" aria-label="The Gostly dashboard replaying eight playtest sessions at once: coloured ghosts move through a dungeon map while deaths, stuck spots and bug reports appear on the timeline" style="display:block;width:100%;height:100%;object-fit:cover;background:#0C0A12"></video>
+  </div>
+  <p style="margin:10px 0 0;font:500 12px 'JetBrains Mono',monospace;color:var(--muted)">The dashboard replaying eight playtest sessions at once · sample data</p>
+
+  <section style="display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:64px;padding:48px 0 72px;border-bottom:1px solid var(--line)">
+    <div>
+      <div style="font:500 13px 'JetBrains Mono',monospace;color:var(--teal-t)">work in progress · solo side project</div>
+      <h1 style="margin:12px 0 0;font:600 84px/0.95 'Unbounded',sans-serif;letter-spacing:-.04em">gostly</h1>
+      <p style="margin:20px 0 0;max-width:46ch;font-size:22px;line-height:1.45;color:var(--ink2);text-wrap:pretty">A playtest toolkit for indie game developers. Testers play your build and press F8 when something's off. Gostly records where they went and what broke, and shows you what to fix first.</p>
+      <p style="margin:22px 0 0;max-width:62ch;padding:14px 16px;border:1px solid var(--line2);border-radius:10px;font-size:15px;line-height:1.55;color:var(--ink2)"><strong style="color:#FFD54A;font-weight:700">Not released yet.</strong> Everything on this page is built and runs with automated tests on my machine. Hosting and a public release come next. The screens show the real dashboard running on sample data from a made-up game.</p>
+      <div style="display:flex;gap:10px;margin-top:26px">
+        <a href="mailto:svenslivar@gmail.com?subject=Gostly" style="text-decoration:none;font-size:16px;font-weight:600;padding:12px 21px;background:var(--inv);color:var(--on-inv);border-radius:6px">Ask me for a demo</a>
+        <button onClick="{{ openDashboard }}" style="font:600 16px 'Hanken Grotesk',sans-serif;padding:12px 21px;border:1px solid var(--ink);border-radius:6px;background:transparent;color:var(--ink);cursor:pointer">Watch the replay</button>
+      </div>
+    </div>
+    <dl style="margin:0;align-self:end;display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px 24px;font-size:16px;padding:22px;background:var(--surface);border-radius:14px">
+      <dt style="color:var(--muted)">Type</dt><dd style="margin:0;font-weight:600">Solo side project, in progress</dd>
+      <dt style="color:var(--muted)">Engines</dt><dd style="margin:0;font-weight:600">Unity · Godot 4 and web games (early)</dd>
+      <dt style="color:var(--muted)">Stack</dt>
+      <dd style="margin:0;display:flex;flex-wrap:wrap;gap:6px">
+        <span style="padding:3px 10px;border:1px solid var(--line2);border-radius:999px;font-size:14px;font-weight:600">Java 21</span>
+        <span style="padding:3px 10px;border:1px solid var(--line2);border-radius:999px;font-size:14px;font-weight:600">Spring Boot</span>
+        <span style="padding:3px 10px;border:1px solid var(--line2);border-radius:999px;font-size:14px;font-weight:600">PostgreSQL</span>
+        <span style="padding:3px 10px;border:1px solid var(--line2);border-radius:999px;font-size:14px;font-weight:600">React</span>
+        <span style="padding:3px 10px;border:1px solid var(--line2);border-radius:999px;font-size:14px;font-weight:600">TypeScript</span>
+        <span style="padding:3px 10px;border:1px solid var(--line2);border-radius:999px;font-size:14px;font-weight:600">C#</span>
+        <span style="padding:3px 10px;border:1px solid var(--line2);border-radius:999px;font-size:14px;font-weight:600">GDScript</span>
+        <span style="padding:3px 10px;border:1px solid var(--line2);border-radius:999px;font-size:14px;font-weight:600">Node.js</span>
+      </dd>
+      <dt style="color:var(--muted)">Tests</dt><dd style="margin:0;font-weight:600">560+ automated tests</dd>
+    </dl>
+  </section>
+
+  <section style="display:grid;grid-template-columns:260px minmax(0,1fr);gap:64px;padding:72px 0;border-bottom:1px solid var(--line)">
+    <h2 style="margin:0;font:800 30px/1.1 'Bricolage Grotesque',sans-serif;letter-spacing:-.03em">Why I'm building it</h2>
+    <div style="max-width:68ch;font-size:18px;line-height:1.6;color:var(--ink2)">
+      <p style="margin:0">My master's thesis ran on gameplay logs: 28 players and 255 sessions of <a href="parry-simulator.html">Parry Simulator</a>. Logging everything that happens in a game, where players go, where they die and what breaks, turned out to be the most useful part of the study.</p>
+      <p style="margin:16px 0 0">Small teams test with friends, Discord communities and game jam players, but they get feedback like "the boss felt unfair" with no way to see what happened. Gostly turns the logging into a tool any small team can drop into its game, so the next playtest is easier.</p>
+      <p style="margin:16px 0 0;font-size:16px;color:var(--muted)"><em>Gost</em> is Croatian for "guest": testers are guests in your game, and they leave ghosts behind.</p>
+    </div>
+  </section>
+
+  <section style="display:grid;grid-template-columns:260px minmax(0,1fr);gap:64px;padding:72px 0;border-bottom:1px solid var(--line)">
+    <div>
+      <h2 style="margin:0;font:800 30px/1.1 'Bricolage Grotesque',sans-serif;letter-spacing:-.03em">What it does</h2>
+      <p style="margin:12px 0 0;font-size:16px;line-height:1.55;color:var(--ink2)">Testers only play and press F8. Everything else happens on the developer's side.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:20px;align-items:center;padding:20px;background:var(--surface);border-radius:14px">
+        <div style="aspect-ratio:960 / 724;border-radius:10px;overflow:hidden;background:#0C0A12"><video data-autoloop="" src="media/gostly/replay-map-loop.mp4" poster="media/gostly/replay-map-loop-poster.webp" width="960" height="724" preload="metadata" aria-label="Ghost replay: eight testers' paths drawn over a level map, with death crosses and report diamonds" style="display:block;width:100%;height:100%;object-fit:cover"></video></div>
+        <div><div style="font:500 12px 'JetBrains Mono',monospace;color:var(--teal-t)">01</div><div style="margin-top:6px;font-size:21px;font-weight:700">Ghost replays</div><p style="margin:8px 0 0;font-size:16px;line-height:1.55;color:var(--ink2)">The SDK records each tester's position a few times a second, and the dashboard replays many sessions at once on a map of the level. Deaths, stuck spots and reports sit on the same timeline, with heatmaps and named zones on top. No video needed.</p></div>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:20px;align-items:center;padding:20px;background:var(--surface);border-radius:14px">
+        <a href="media/gostly/screen-report.webp" target="_blank" rel="noopener" style="display:block;aspect-ratio:16 / 10;border-radius:10px;overflow:hidden;background:#0C0A12"><img src="media/gostly/card-report.webp" width="960" height="600" loading="lazy" alt="A bug report in the dashboard: screenshot, tester's note, status, build, position in the level and a button to open the replay at that moment" style="display:block;width:100%;height:100%;object-fit:cover;object-position:0 0"></a>
+        <div><div style="font:500 12px 'JetBrains Mono',monospace;color:var(--teal-t)">02</div><div style="margin-top:6px;font-size:21px;font-weight:700">Bug reports from inside the game</div><p style="margin:8px 0 0;font-size:16px;line-height:1.55;color:var(--ink2)">F8 opens a small window in the game. The report arrives with a screenshot, recent logs, the device, the position in the level and a link to that moment in the replay. Crashes file themselves, grouped by cause, and a report can be sent to GitHub as an issue.</p></div>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:20px;align-items:center;padding:20px;background:var(--surface);border-radius:14px">
+        <a href="media/gostly/screen-overview.webp" target="_blank" rel="noopener" style="display:block;aspect-ratio:16 / 10;border-radius:10px;overflow:hidden;background:#0C0A12"><img src="media/gostly/card-overview.webp" width="960" height="600" loading="lazy" alt="Overview page led by Needs attention: a new crash, three testers stuck in the same spot, the zone where runs end, and deaths down 80 percent since the last build" style="display:block;width:100%;height:100%;object-fit:cover;object-position:0 0"></a>
+        <div><div style="font:500 12px 'JetBrains Mono',monospace;color:var(--teal-t)">03</div><div style="margin-top:6px;font-size:21px;font-weight:700">What to fix first</div><p style="margin:8px 0 0;font-size:16px;line-height:1.55;color:var(--ink2)">After a playtest round, Overview leads with plain findings: a new crash, a spot where several testers got stuck, where runs end, and what changed since the last build. Every finding plays the exact moments behind it.</p></div>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:20px;align-items:center;padding:20px;background:var(--surface);border-radius:14px">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <a href="media/gostly/screen-runflow.webp" target="_blank" rel="noopener" style="display:block;aspect-ratio:16 / 10;border-radius:8px;overflow:hidden;background:#0C0A12"><img src="media/gostly/card-runflow.webp" width="960" height="600" loading="lazy" alt="Run flow for a card game: how many runs reach each step, with the biggest drop marked" style="display:block;width:100%;height:100%;object-fit:cover;object-position:0 0"></a>
+          <a href="media/gostly/screen-choices.webp" target="_blank" rel="noopener" style="display:block;aspect-ratio:16 / 10;border-radius:8px;overflow:hidden;background:#0C0A12"><img src="media/gostly/card-choices.webp" width="960" height="600" loading="lazy" alt="Choices table: each card's pick rate, win rate when picked and time to decide" style="display:block;width:100%;height:100%;object-fit:cover;object-position:0 0"></a>
+          <a href="media/gostly/screen-values.webp" target="_blank" rel="noopener" style="grid-column:1 / -1;display:block;aspect-ratio:32 / 11;border-radius:8px;overflow:hidden;background:#0C0A12"><img src="media/gostly/card-values.webp" width="960" height="600" loading="lazy" alt="Ghost lines for a simulator: every tester's coins over 20 minutes, all dropping at the same upkeep bill" style="display:block;width:100%;height:100%;object-fit:cover;object-position:0 20%"></a>
+        </div>
+        <div><div style="font:500 12px 'JetBrains Mono',monospace;color:var(--teal-t)">04</div><div style="margin-top:6px;font-size:21px;font-weight:700">Not only for games about moving</div><p style="margin:8px 0 0;font-size:16px;line-height:1.55;color:var(--ink2)">Each project picks a game profile when it's created. Action games get the map replay; card and turn-based games get run flow and pick rates per card; simulators get ghost lines, one line per tester for a value like coins over time.</p></div>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:20px;align-items:center;padding:20px;background:var(--surface);border-radius:14px">
+        <a href="media/gostly/screen-releases.webp" target="_blank" rel="noopener" style="display:block;aspect-ratio:16 / 10;border-radius:10px;overflow:hidden;background:#0C0A12"><img src="media/gostly/card-releases.webp" width="960" height="600" loading="lazy" alt="Release 0.5.0 with notes grouped into New, Fixes and Balance, linked bug reports, and tabs for Steam, Discord, itch.io and plain text" style="display:block;width:100%;height:100%;object-fit:cover;object-position:0 0"></a>
+        <div><div style="font:500 12px 'JetBrains Mono',monospace;color:var(--teal-t)">05</div><div style="margin-top:6px;font-size:21px;font-weight:700">Patch notes from git</div><p style="margin:8px 0 0;font-size:16px;line-height:1.55;color:var(--ink2)">A command-line tool reads the commits since the last release, groups them and marks the reports they fix, then writes notes for Steam, Discord, itch.io and plain text. <span style="font-family:'JetBrains Mono',monospace;font-size:14px">gostly check</span> can fail a CI build when deaths or crashes per session get clearly worse.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="display:grid;grid-template-columns:260px minmax(0,1fr);gap:64px;padding:72px 0;border-bottom:1px solid var(--line)">
+    <div>
+      <h2 style="margin:0;font:800 30px/1.1 'Bricolage Grotesque',sans-serif;letter-spacing:-.03em">How it's built</h2>
+      <p style="margin:12px 0 0;font-size:16px;line-height:1.55;color:var(--ink2)">Six parts in one repository, each with its own tests.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div style="padding:20px;background:var(--surface);border-radius:12px"><div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline"><div style="font-size:18px;font-weight:700">Unity SDK</div><div style="font:500 12px 'JetBrains Mono',monospace;color:var(--muted)">C# · 144 tests</div></div><div style="margin-top:6px;font-size:15px;line-height:1.5;color:var(--ink2)">Batched, compressed telemetry off the main thread, an offline outbox, the F8 report window and a consent prompt. Editor tools draw ghosts in the Scene view, list reports and capture level maps at build time.</div></div>
+      <div style="padding:20px;background:var(--surface);border-radius:12px"><div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline"><div style="font-size:18px;font-weight:700">API</div><div style="font:500 12px 'JetBrains Mono',monospace;color:var(--muted)">Java 21, Spring Boot · 197 tests</div></div><div style="margin-top:6px;font-size:15px;line-height:1.5;color:var(--ink2)">PostgreSQL and S3 storage. Rate-limited ingest with safe retries, replay decoding, heatmaps, findings, crash grouping, team members, GitHub issues and a Discord digest.</div></div>
+      <div style="padding:20px;background:var(--surface);border-radius:12px"><div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline"><div style="font-size:18px;font-weight:700">Dashboard and site</div><div style="font:500 12px 'JetBrains Mono',monospace;color:var(--muted)">React, TypeScript · 146 tests</div></div><div style="margin-top:6px;font-size:15px;line-height:1.5;color:var(--ink2)">Replays and heatmaps drawn on canvas without a UI or chart library, dark and light themes, phone layouts, and a public landing page and docs.</div></div>
+      <div style="padding:20px;background:var(--surface);border-radius:12px"><div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline"><div style="font-size:18px;font-weight:700">Command-line tool</div><div style="font:500 12px 'JetBrains Mono',monospace;color:var(--muted)">Node, TypeScript · 36 tests</div></div><div style="margin-top:6px;font-size:15px;line-height:1.5;color:var(--ink2)">Patch notes from git, report lists in the terminal, build comparison and a CI check.</div></div>
+      <div style="grid-column:1 / -1;padding:20px;background:var(--surface);border-radius:12px"><div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline"><div style="font-size:18px;font-weight:700">Godot and web game SDKs</div><div style="font:500 12px 'JetBrains Mono',monospace;color:var(--muted)">GDScript, JavaScript · 42 tests · early</div></div><div style="margin-top:6px;font-size:15px;line-height:1.5;color:var(--ink2)">The same recording, reports and consent for Godot 4 (an addon with an editor dock) and for browser games, sending to the same API.</div></div>
+    </div>
+  </section>
+
+  <section style="display:grid;grid-template-columns:260px minmax(0,1fr);gap:64px;padding:72px 0;border-bottom:1px solid var(--line)">
+    <h2 style="margin:0;font:800 30px/1.1 'Bricolage Grotesque',sans-serif;letter-spacing:-.03em">Where it is now</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px">
+      <div style="padding:20px;background:var(--surface);border-radius:12px;border-top:3px solid #3FCF7F">
+        <div style="font:500 12px 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#3FCF7F">Done</div>
+        <ul style="margin:12px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:8px;font-size:15px;line-height:1.5;color:var(--ink2)"><li>API, Unity SDK and patch notes tool</li><li>Web dashboard and public site</li><li>Findings, zones, highlights, run flow and ghost lines</li><li>Team members, GitHub issues, Discord digest</li></ul>
+      </div>
+      <div style="padding:20px;background:var(--surface);border-radius:12px;border-top:3px solid #FFD54A">
+        <div style="font:500 12px 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#FFD54A">Now</div>
+        <ul style="margin:12px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:8px;font-size:15px;line-height:1.5;color:var(--ink2)"><li>Finishing the Godot and web game SDKs</li><li>Testing the Unity tools and dashboard with real playtests</li><li>Packaging the Unity package and the CLI</li></ul>
+      </div>
+      <div style="padding:20px;background:var(--surface);border-radius:12px;border-top:3px solid var(--line2)">
+        <div style="font:500 12px 'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)">Next</div>
+        <ul style="margin:12px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:8px;font-size:15px;line-height:1.5;color:var(--ink2)"><li>Hosting and a public launch</li><li>Unity package on OpenUPM, CLI on npm</li><li>Free and paid plans</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section style="display:grid;grid-template-columns:260px minmax(0,1fr);gap:64px;padding:72px 0;border-bottom:1px solid var(--line)">
+    <div>
+      <h2 style="margin:0;font:800 30px/1.1 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">Media</h2>
+      <p style="margin:12px 0 0;font-size:16px;line-height:1.55;color:var(--ink2)">The real dashboard with sample data from a made-up game.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div style="font:500 11px 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">The public landing page</div>
+      <figure style="margin:0"><div style="position:relative;aspect-ratio:1200 / 640;border-radius:10px;overflow:hidden;background:#0C0A12"><video data-autoloop="" src="media/gostly/landing-hero.mp4" poster="media/gostly/landing-hero-poster.webp" width="1200" height="640" preload="metadata" aria-label="Gostly's landing page hero: the headline Your testers leave ghosts. Follow them, next to a looping live replay of five ghost paths" style="display:block;width:100%;height:100%;object-fit:cover"></video></div></figure>
+      <div style="font:500 11px 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">Gallery</div>
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px">
+        <a href="media/gostly/screen-replay.webp" target="_blank" rel="noopener" style="display:block"><div style="aspect-ratio:16 / 10;border-radius:8px;overflow:hidden;background:#0C0A12"><img src="media/gostly/screen-replay-thumb.webp" width="640" height="400" loading="lazy" alt="Replay page with eight sessions, named zones and findings" style="display:block;width:100%;height:100%;object-fit:cover"></div></a>
+        <a href="media/gostly/screen-reports.webp" target="_blank" rel="noopener" style="display:block"><div style="aspect-ratio:16 / 10;border-radius:8px;overflow:hidden;background:#0C0A12"><img src="media/gostly/screen-reports-thumb.webp" width="640" height="400" loading="lazy" alt="Reports board with columns for New, Confirmed, Fixed, Won't fix and Duplicate" style="display:block;width:100%;height:100%;object-fit:cover"></div></a>
+        <a href="media/gostly/screen-compare.webp" target="_blank" rel="noopener" style="display:block"><div style="aspect-ratio:16 / 10;border-radius:8px;overflow:hidden;background:#0C0A12"><img src="media/gostly/screen-compare-thumb.webp" width="640" height="400" loading="lazy" alt="Compare builds: deaths, stuck, rage quits and crashes per session for 0.4.1 and 0.5.0" style="display:block;width:100%;height:100%;object-fit:cover"></div></a>
+      </div>
+      <button onClick="{{ openDashboard }}" style="display:inline-flex;align-items:center;gap:10px;align-self:flex-start;min-height:44px;padding:0 4px;border:0;background:none;color:var(--teal-t);font:600 14px 'Hanken Grotesk',sans-serif;text-decoration:underline;text-underline-offset:3px;cursor:pointer">Watch the replay full screen (11 s)</button>
+    </div>
+  </section>
+
+  <nav aria-label="More projects" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:72px 0 88px">
+    <a href="johnny.html" style="display:block;text-decoration:none;padding:22px;background:var(--surface);border-radius:14px;border-top:4px solid #D7263D">
+      <div style="font-size:14px;color:var(--muted)">← Previous</div>
+      <div style="margin-top:6px;font:800 24px 'Bricolage Grotesque',sans-serif;letter-spacing:-.03em">Johnny, is it still you?</div>
+    </a>
+    <a href="parry-simulator.html" style="display:block;text-align:right;text-decoration:none;padding:22px;background:var(--surface);border-radius:14px;border-top:4px solid #6FE3D3">
+      <div style="font-size:14px;color:var(--muted)">Next →</div>
+      <div style="margin-top:6px;font:800 24px 'Bricolage Grotesque',sans-serif;letter-spacing:-.03em">Parry Simulator</div>
+    </a>
+  </nav>
+</main>
+<footer style="border-top:1px solid var(--line)">
+  <div style="max-width:1240px;margin:0 auto;padding:32px 40px;display:flex;align-items:center;gap:16px;font-size:15px;color:var(--ink2)">
+    <span style="margin-right:auto">svenslivar@gmail.com · Zagreb, Croatia</span>
+    <a href="mailto:svenslivar@gmail.com" style="text-decoration:none;font-weight:600;padding:11px 18px;background:var(--inv);color:var(--on-inv);border-radius:6px">Email me</a>
+  </div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>class Component extends DCLogic{componentDidMount(){const go=()=>window.SV&&window.SV.media?window.SV.media.init():this.mw=setTimeout(go,40);go()}componentWillUnmount(){clearTimeout(this.mw)}renderVals(){return{openDashboard:()=>window.SV&&window.SV.media.open("media/gostly/replay-dashboard.mp4","media/gostly/replay-dashboard-poster.webp","Gostly dashboard replaying eight playtest sessions")}}}</script>
+</body>
+</html>

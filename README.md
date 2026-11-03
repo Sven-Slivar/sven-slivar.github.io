@@ -12,7 +12,8 @@ Personal portfolio and CV. Each project has a small playable minigame that resol
 | Parry Simulator | `parry-simulator.html` |
 | Sundress Murder | `sundress-murder.html` |
 | Johnny, is it still you? | `johnny.html` |
-| CV, printable | `cv.html` |
+| Gostly (work in progress) | `gostly.html` |
+| CV, printable | `cv.html` (Croatian: `cv-hr.html`) |
 
 ## Stack
 
